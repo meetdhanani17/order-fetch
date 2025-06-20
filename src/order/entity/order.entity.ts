@@ -1,4 +1,5 @@
 import { OrderItemEntity } from 'src/order-item/entity/order-item.entity';
+import { OrderPaymentCollectionEntity } from 'src/order-payment-collection/entity/order-payment-collection.entity';
 import { Entity, Column, PrimaryColumn, OneToMany } from 'typeorm';
 
 @Entity({ name: 'order' })
@@ -59,4 +60,7 @@ export class OrderEntity {
 
   @OneToMany(() => OrderItemEntity, (orderItem) => orderItem.order)
   orderItems: OrderItemEntity[];
+
+  @OneToMany(() => OrderPaymentCollectionEntity, (opc) => opc.order)
+  orderPaymentCollections: OrderPaymentCollectionEntity[];
 }

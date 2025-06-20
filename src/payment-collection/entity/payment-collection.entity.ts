@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { OrderPaymentCollectionEntity } from 'src/order-payment-collection/entity/order-payment-collection.entity';
+import { Entity, Column, PrimaryColumn, OneToMany } from 'typeorm';
 
 @Entity({ name: 'payment_collection' })
 export class PaymentCollectionEntity {
@@ -49,4 +50,7 @@ export class PaymentCollectionEntity {
 
   @Column({ type: 'jsonb', nullable: true })
   metadata: any;
+
+  @OneToMany(() => OrderPaymentCollectionEntity, (opc) => opc.order)
+  orderPaymentCollections: OrderPaymentCollectionEntity[];
 }
