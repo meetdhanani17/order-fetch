@@ -1,3 +1,33 @@
+.env file required in root folder with below required keys<br/>
+DB_HOST=<br/>
+DB_PORT=<br/>
+DB_USERNAME=<br/>
+DB_PASSWORD=<br/>
+DB_NAME=<br/>
+
+install node modules via npm i<br/>
+run project with npm run start or npm run start:dev
+
+<b>Fetch all order api</b><br/>
+http://localhost:3000/orders?orderId={string}&minTotalAmount={number}&maxTotalAmount={number}&limit={number}&page={number}
+
+<p>
+orderId - optional query param <br/>
+minTotalAmount - optional query param - filter applied on amount key<br/>
+maxTotalAmount - optional query param - filter applied on amount key<br/>
+limit - optional query param (default 10)<br/>
+page - optional query param (default 1)<br/>
+</p>
+
+example
+http://localhost:3000/orders?orderId=order_01JRHP6MWC8BE3FNY34QS95JBN&minTotalAmount=10&maxTotalAmount=1000&limit=10&page=1
+
+<b>Fetch order by order id</b><br/>
+http://localhost:3000/orders/{orderid}
+
+example
+http://localhost:3000/orders/order_01JRHP6MWC8BE3FNY34QS95JBN
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
